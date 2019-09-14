@@ -26,3 +26,9 @@ Run the following command to run startup migrations.
 ```js
 adonis migration:run
 ```
+
+Use the adonis command to start project
+
+```bash
+adonis serve --dev
+```
