@@ -9,7 +9,7 @@ Route.post("sessions", "SessionController.store");
 Route.post("forgot", "ForgotPasswordController.store");
 Route.post("reset", "ResetPasswordController.store");
 
-Route.post("files/:id", "FileController.show");
+Route.get("files/:id", "FileController.show");
 
 Route.group(() => {
   Route.post("files", "FileController.store");
