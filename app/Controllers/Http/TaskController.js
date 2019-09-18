@@ -18,12 +18,12 @@ class TaskController {
    * @param {View} ctx.view
    */
   async index({ params }) {
-    const task = await Task.query()
-      .with('project_id', params.projects_id)
+    const tasks = await Task.query()
+      .where('project_id', params.projects_id)
       .with('user')
       .fetch();
 
-    return task;
+    return tasks;
   }
 
   /**
