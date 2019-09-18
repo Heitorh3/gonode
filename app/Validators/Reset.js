@@ -1,5 +1,3 @@
-
-
 class Reset {
   get validateAll() {
     return true;
@@ -7,8 +5,8 @@ class Reset {
 
   get rules() {
     return {
-      token: "required",
-      password: "required|confirmed"
+      token: 'required',
+      password: 'required|confirmed',
     };
   }
 }

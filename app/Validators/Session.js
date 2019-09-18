@@ -1,5 +1,3 @@
-
-
 class Session {
   get validateAll() {
     return true;
@@ -7,8 +5,8 @@ class Session {
 
   get rules() {
     return {
-      email: "required|email",
-      password: "required"
+      email: 'required|email',
+      password: 'required',
     };
   }
 }

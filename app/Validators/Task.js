@@ -1,13 +1,14 @@
-class Forgot {
+class Task {
   get validateAll() {
     return true;
   }
 
   get rules() {
     return {
-      email: 'email|required',
+      title: 'required',
+      due_date: 'date',
     };
   }
 }
 
-module.exports = Forgot;
+module.exports = Task;
