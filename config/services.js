@@ -1,9 +1,8 @@
-"use strict";
 
-const Env = use("Env");
+const Env = use('Env');
 
 module.exports = {
   sentry: {
-    dsn: Env.get("SENTRY_DSN")
-  }
+    dsn: Env.get('SENTRY_DSN'),
+  },
 };

@@ -1,4 +1,4 @@
-"use strict";
+
 
 /** @type {typeof import ('@adonisjs/lucid/src/Lucid/Model')} */
 const File = use("App/Models/File");
@@ -10,7 +10,7 @@ const Helpers = use("Helpers");
 class FileController {
   async show({ params, response }) {
     const file = await File.findOrFail(params.id);
-    //const file = await File.findByOrFail(params.id);
+    // const file = await File.findByOrFail(params.id);
 
     return response.download(Helpers.tmpPath(`uploads/${file.file}`));
   }

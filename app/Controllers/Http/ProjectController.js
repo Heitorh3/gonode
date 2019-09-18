@@ -1,4 +1,4 @@
-"use strict";
+
 
 const Project = use("App/Models/Project");
 
