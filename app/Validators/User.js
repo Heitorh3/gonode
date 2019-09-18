@@ -1,5 +1,3 @@
-
-
 class User {
   get validateAll() {
     return true;
@@ -7,9 +5,9 @@ class User {
 
   get rules() {
     return {
-      username: "required|unique:users",
-      email: "required|email|unique:users",
-      password: "required|confimed"
+      username: 'required|unique:users',
+      email: 'required|email|unique:users',
+      password: 'required|confirmed',
     };
   }
 }
