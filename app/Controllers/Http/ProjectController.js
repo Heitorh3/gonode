@@ -1,6 +1,4 @@
-
-
-const Project = use("App/Models/Project");
+const Project = use('App/Models/Project');
 
 class ProjectController {
   /**
@@ -12,10 +10,11 @@ class ProjectController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async index() {
+  async index({ request }) {
+    const { page } = request.get();
     const projects = await Project.query()
-      .with("user")
-      .fetch();
+      .with('user')
+      .paginate(page);
 
     return projects;
   }
@@ -29,7 +28,7 @@ class ProjectController {
    * @param {Response} ctx.response
    */
   async store({ request, auth }) {
-    const data = request.only(["title", "description"]);
+    const data = request.only(['title', 'description']);
 
     const project = await Project.create({ ...data, user_id: auth.user.id });
 
@@ -48,8 +47,8 @@ class ProjectController {
   async show({ params }) {
     const project = await Project.findOrFail(params.id);
 
-    await project.load("user");
-    await project.load("tasks");
+    await project.load('user');
+    await project.load('tasks');
 
     return project;
   }
@@ -64,7 +63,7 @@ class ProjectController {
    */
   async update({ params, request }) {
     const project = await Project.findOrFail(params.id);
-    const data = request.only(["title", "description"]);
+    const data = request.only(['title', 'description']);
 
     project.merge(data);
 
